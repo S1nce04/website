@@ -1,0 +1,602 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+header .logo h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/hero_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This creates a parallax-like effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(8px); /* Creates frosted glass effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* About Me Section */
+.about-section, 
+#about, 
+.about-me-section {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    padding: 5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    margin: 2rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.about-me-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-me-photo {
+    width: 200px; /* Reduced size */
+    height: 200px; /* Reduced size */
+    border-radius: 60%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    border: 4px solid #007bff; /* Optional: adds a border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.about-me-text, 
+.about-section p,
+#about p {
+    color: #333;
+    line-height: 1.8;
+}
+.about-me-text p {
+    margin-bottom: 1rem;
+}
+.about-section h2,
+#about h2,
+.about-me-section h2 {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.about-section:hover,
+#about:hover,
+.about-me-section:hover {
+    background: rgba(231, 249, 252, 0.85);
+    transition: background 0.3s ease;
+}
+
+/* Rest of the CSS remains the same */
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.service-card {
+    background: #e3fafa;
+    padding: 1.5rem; /* Adjust padding for consistency */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 300px; /* Ensure a fixed width */
+    margin: 0 auto; /* Center align the cards */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Gallery Section */
+.gallery-carousel {
+    position: relative;
+    padding: 2rem 0;
+}
+    
+.quad-card {
+    flex: 0 0 300px;
+    background: #d6fffc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Add smooth transition */
+    cursor: pointer; /* Shows it's interactive */
+}
+
+.quad-card:hover {
+    transform: scale(1.1); /* Makes the card 10% bigger on hover */
+    z-index: 1; /* Ensures the enlarged card appears above others */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Enhanced shadow for depth */
+}
+
+.drone-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition for the image */
+}
+
+.quad-card:hover .drone-image {
+    transform: scale(1.05); /* Slightly scales up the image inside */
+}
+
+.carousel-nav {
+    display: none; /* This will hide the navigation buttons */
+}
+
+/* If you still want to keep scrolling functionality, make sure the gallery is scrollable */
+.quad-gallery {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;    
+    padding: 1rem;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #007bff #f0f0f0; /* For Firefox */
+}
+
+/* Styling the scrollbar for webkit browsers (Chrome, Safari, etc.) */
+.quad-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.quad-gallery::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.quad-gallery::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 4px;
+}
+
+.quad-gallery::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1100;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Utility Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+}
+.drone-options {
+    display: none; /* Hidden by default */
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+.drone-options {
+    display: none; /* Hidden by default */
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.required-components {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #e8f4ff;
+    border-radius: 8px;
+}
+
+.required-components h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.component-list {
+    list-style: none;
+}
+
+.component-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 1000;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 20px auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh; /* Maximum height for the modal content */
+    overflow-y: auto; /* Enable scrolling within the modal */
+}
+
+/* Style the scrollbar for better visibility */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+.request-drone-section {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.request-drone-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.request-drone-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    background: white;
+    color: #3498db;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 20px auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Comparison Modal Table Styles */
+#comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#comparison-table thead {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+}
+
+#comparison-table th {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+    letter-spacing: 0.5px;
+}
+
+#comparison-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+#comparison-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#comparison-table tr:hover {
+    background-color: #f0f7ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Style the modal title */
+#comparison-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Make the modal content look better */
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* Add some spacing between cells */
+#comparison-table td:first-child {
+    font-weight: 600;
+    text-align: left;
+    background-color: #f1f1f1;
+}

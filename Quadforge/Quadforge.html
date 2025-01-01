@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom drone building and modification services by QuadForge">
+    <meta name="keywords" content="drones, custom drones, drone services, drone building, QuadForge">
+    <title>QuadForge - Custom Drone Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>QuadForge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <h1>Custom Drones for Your Unique Needs</h1>
+                <p>Professional-grade custom drones built to your specifications</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container fade-in">
+                <h2>About QuadForge</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Welcome to QuadForge, where innovation meets aerial excellence. We specialize in crafting custom drones that perfectly match your unique requirements and vision.</p>
+                        <ul class="about-features">
+                            <li><i class="fas fa-check"></i> Custom-built to your exact specifications</li>
+                            <li><i class="fas fa-check"></i> Quality components from leading manufacturers</li>
+                            <li><i class="fas fa-check"></i> Comprehensive testing and support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about-me" class="about-me-section">
+            <div class="container fade-in">
+                <h2>About Me</h2>
+                <div class="about-me-content">
+                    <img src="image/about_me.jpeg" alt="Om Soni" class="about-me-photo">
+                    <div class="about-me-text">
+                        <p>Hi! I'm Om Soni, a passionate drone enthusiast and developer based in Chennai. I have 2 years of experience in drone designing, programming, and customization.</p>
+                        <p>Currently pursuing my BTech in EEE from Sikkim Manipal Institute of Technology.</p>
+                        <p>When I'm not building drones, you can find me gaming, working on robotics projects, or exploring the latest drone technology trends.</p>
+                        <p>Feel free to connect with me through my socials or check out my blog for the latest updates and tips on drone technology!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container fade-in">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <!-- 3-inch Drone Card -->
+                    <div class="service-card" data-drone-type="3-inch" onclick="showComparison('3-inch')">
+                        <i class="fas fa-drone"></i>
+                        <h3>3" Racing Drones </h3>
+                        <p>Compact, agile, and perfect for racing through tight spaces.</p>
+                                    <p>CLICK TO SEE WHAT U WANT </p>
+                    </div>
+                    
+                    <!-- 5-inch Drone Card -->
+                    <div class="service-card" data-drone-type="5-inch" onclick="showComparison('5-inch')">
+                        <i class="fas fa-camera"></i>
+                        <h3>5" Freestyle Drones</h3>
+                        <p>The perfect balance of stability and agility.</p>
+                                <p>CLICK TO SEE WHAT U WANT </p>
+
+                        
+                    </div>
+                    
+                    <!-- 7-inch Drone Card -->
+                    <div class="service-card" data-drone-type="7-inch" onclick="showComparison('7-inch')">
+                        <i class="fas fa-rocket"></i>
+                        <h3>7" Professional Drones</h3>
+                        <p>Heavy-duty drones built for endurance and payload capacity.</p>
+                                    <p>CLICK TO SEE WHAT U WANT </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container fade-in">
+                <h2>Our Quadcopter Models</h2>
+                <div class="gallery-carousel">
+                    <!-- Gallery Navigation -->
+                    <button class="carousel-nav prev" onclick="scrollCarousel('left')" aria-label="Previous Gallery Item">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="quad-gallery">
+                        <!-- Drone Cards -->
+                        <div class="quad-card clickable" onclick="showPopup('3-inch')" data-drone-type="3-inch">
+                            <img src="image/drone1.jpeg" alt="3-inch Racing Drone" class="drone-image">
+                            <h3>3" Racing Drone FPV </h3>
+                        </div>
+                        <div class="quad-card clickable" onclick="showPopup('5-inch')" data-drone-type="5-inch">
+                            <img src="image/drone2.jpeg" alt="5-inch Freestyle Drone" class="drone-image">
+                            <h3>5" Freestyle Drone FPV </h3>
+                        </div>
+                        <div class="quad-card clickable" onclick="showPopup('7-inch')" data-drone-type="7-inch">
+                            <img src="image/drone3.jpeg" alt="7-inch Professional Drone" class="drone-image">
+                            <h3>7" Professional Drone FPV </h3>
+                        </div>
+                    </div>
+                    <button class="carousel-nav next" onclick="scrollCarousel('right')" aria-label="Next Gallery Item">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    <!-- Modals -->
+    <!-- Specifications Modal -->
+    <div id="popup-modal" class="modal" role="dialog" aria-labelledby="drone-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePopup()" aria-label="Close specifications modal">&times;</span>
+            <h3 id="drone-title"></h3>
+            <ul id="build-materials"></ul>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div id="comparison-modal" class="modal" role="dialog" aria-labelledby="comparison-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeComparison()" aria-label="Close comparison modal">&times;</span>
+            <h3 id="comparison-title">FPV vs Normal Drone Comparison</h3>
+            <table id="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>FPV Drone</th>
+                        <th>Normal Drone</th>
+                    </tr>
+                </thead>
+                <tbody id="comparison-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <section id="request-drone" class="request-drone-section">
+        <div class="container">
+            <h2>Ready to Build Your Custom Drone?</h2>
+            <p>Click below to start customizing your perfect drone tailored to your needs.</p>
+            <button id="requestButton" class="cta-button">Request Your Custom Drone</button>
+        </div>
+    </section>
+    
+    <!-- Request Form Modal -->
+    <div id="formModal" class="modal" role="dialog" aria-labelledby="formModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-button" aria-label="Close request form modal">&times;</span>
+            <h2 id="formModalTitle">Request Your Custom Build</h2>
+            <form class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="drone-type">Drone Type:</label>
+                    <select id="drone-type" name="drone-type" required>
+                        <option value="">Select a drone type</option>
+                        <option value="3-inch">3" Racing Drone FPV </option>
+                        <option value="5-inch">5" Freestyle Drone FPV </option>
+                        <option value="7-inch">7" Professional Drone FPV </option>
+                    </select>
+                </div>
+                <!-- Components for 3-inch Drone -->
+                    <div id="3-inch-options" class="drone-options">
+                        <div class="required-components">
+                            <h4>Required Components</h4>
+                            <ul class="component-list">
+                               <li>Frame <span class="price-tag">$35 / ₹3000</span></li>
+                                <li>Motors <span class="price-tag">$21 / ₹1,800</span></li>
+                                <li>ESC and Flight Controller Stack <span class="price-tag">$81.97 / ₹7,000</span></li>
+                                <li>Propellers <span class="price-tag">$3.51 / ₹300 </span></li>
+                                <li>Receiver <span class="price-tag">$23.42/ ₹2000</span></li>
+                                <li>Transmitter/Remote-controller <span class="price-tag">$81.97/ ₹7000</span></li>
+                                <li>camera analog <span class="price-tag">$37.47/ ₹3200</span></li>
+                                <li>Video Transmitter<span class="price-tag">$37.47/ ₹3200</span></li>
+                                <li>FPV goggles<span class="price-tag">$146.38/ ₹12500</span></li>
+                                <li>Labour Charges <span class="price-tag">$37.48 / ₹2,000</span></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Components for 5-inch Drone -->
+                    <div id="5-inch-options" class="drone-options">
+                        <div class="required-components">
+                            <h4>Required Components</h4>
+                            <ul class="component-list">
+                                <li>Frame <span class="price-tag">$35 / ₹3000</span></li>
+                                <li>Motors <span class="price-tag">$21 / ₹1,800</span></li>
+                                <li>ESC and Flight Controller Stack <span class="price-tag">$81.97 / ₹7,000</span></li>
+                                <li>Propellers <span class="price-tag">$3.51 / ₹300</span></li>
+                                <li>Receiver <span class="price-tag">$23.42 / ₹2000</span></li>
+                                <li>Transmitter/Remote-controller <span class="price-tag">$81.97 / ₹7000</span></li>
+                                <li>camera analog <span class="price-tag">$37.47 / ₹3200</span></li>
+                                <li>Video Transmitter <span class="price-tag">$37.47 / ₹3200</span></li>
+                                <li>FPV goggles <span class="price-tag">$146.38 / ₹12500</span></li>
+                                <li>Labour Charges <span class="price-tag">$37.48 / ₹2,000</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Components for 7-inch Drone -->
+                    <div id="7-inch-options" class="drone-options">
+                        <div class="required-components">
+                            <h4>Required Components</h4>
+                            <ul class="component-list">
+                                <li>Frame <span class="price-tag">$35 / ₹3000</span></li>
+                                <li>Motors <span class="price-tag">$21 / ₹1,800</span></li>
+                                <li>ESC and Flight Controller Stack <span class="price-tag">$81.97 / ₹7,000</span></li>
+                                <li>Propellers <span class="price-tag">$3.51 / ₹300 </span></li>
+                                <li>Receiver <span class="price-tag">$23.42/ ₹2000</span></li>
+                                <li>Transmitter/Remote-controller <span class="price-tag">$81.97/ ₹7000</span></li>
+                                <li>camera analog <span class="price-tag">$37.47/ ₹3200</span></li>
+                                <li>Video Transmitter<span class="price-tag">$37.47/ ₹3200</span></li>
+                                <li>FPV goggles<span class="price-tag">$146.38/ ₹12500</span></li>
+                                <li>Labour Charges <span class="price-tag">$37.48 / ₹2,000</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <!-- Requirements -->
+                <div class="form-group">
+                    <label for="requirements">Project Requirements:</label>
+                    <textarea id="requirements" name="requirements" rows="4" 
+                        placeholder="Please describe your intended use case and any specific requirements..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content fade-in">
+            <div class="footer-section">
+                <h3>QuadForge</h3>
+                <p>Custom drone solutions for every need</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:omsoni.os2004@gmail.com">omsoni.os2004@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> 9840975298</p>
+                <p><i class="fas fa-location-dot"></i> Chennai And Sikkim</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/since._04" target="_blank" aria-label="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>@since._04</span>
+                    </a>
+                    <a href="https://www.youtube.com/@since..0464" target="_blank" aria-label="Follow us on YouTube">
+                        <i class="fab fa-youtube"></i>
+                        <span>@since ..0464</span>
+                    </a>
+                    <a href="https://www.twitter.com/OMSONi1641485" target="_blank" aria-label="Follow us on Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>@OMSONi1641485</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 QuadForge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
