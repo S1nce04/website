@@ -264,6 +264,7 @@ section h2 {
     background: #0056b3;
 }
 /* Modal Styles */
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -271,18 +272,30 @@ section h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1100;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 20px;
 }
 
 .modal-content {
-    background: #fff;
-    margin: 10% auto;
+    position: relative;
+    background-color: white;
+    margin: 20px auto;
     padding: 2rem;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
-    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh; /* Maximum height for the modal content */
+    overflow-y: auto; /* Enable scrolling within the modal */
+}
+
+/* Ensure the content inside the modal doesn't overflow */
+#build-materials {
+    max-height: 200px; /* Adjust this value as needed */
+    overflow-y: auto; /* Enable scrolling for the content */
+    padding-right: 10px; /* Add some padding to avoid overlap with scrollbar */
 }
 
 .close-button {
@@ -599,4 +612,133 @@ footer {
     font-weight: 600;
     text-align: left;
     background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    #build-materials {
+        max-height: 200px; /* Adjust for smaller screens */
+    }
+}
+
+.submit-button {
+    background: linear-gradient(45deg, #3498db, #2ecc71); /* Gradient background */
+    color: white; /* Text color */
+    padding: 1rem 2rem; /* Padding for better spacing */
+    font-size: 1rem; /* Font size */
+    border: none; /* Remove default border */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-weight: 600; /* Bold text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Slightly spaced letters */
+    margin-top: 1rem; /* Margin to separate from other elements */
+}
+
+.submit-button:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.submit-button:active {
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Smaller shadow on click */
+}
+
+.submit-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Custom focus outline */
+}
+
+
+/* Optional Components Styling */
+.optional-components {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0fff4;
+    border-radius: 8px;
+}
+
+.optional-components h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.accessory-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.accessory-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.accessory-item label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.accessory-item:hover {
+    background-color: #e8f6ff;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+/* Style for the price tag */
+.price-tag {
+    color: #2c3e50;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Adjust spacing for the entire component list */
+.component-list li {
+    margin-bottom: 0.5rem;
+}
+
+
+/*DRONE PRICE CALCULATION FONT*/
+
+.price-summary {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.price-summary h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.summary-content > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.summary-content > div:last-child {
+    border-bottom: none;
+    padding-top: 1.2rem;
+    margin-top: 0.5rem;
+    border-top: 2px solid #dee2e6;
+    font-weight: bold;
+}
+
+.total-price {
+    font-size: 1.1rem;
+    color: #2c3e50;
 }

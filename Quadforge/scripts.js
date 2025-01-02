@@ -9,6 +9,7 @@ document.querySelectorAll('.close-button').forEach(button => {
         popupModal.style.display = 'none';
         comparisonModal.style.display = 'none';
         formModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable body scrolling
     });
 });
 
@@ -16,12 +17,15 @@ document.querySelectorAll('.close-button').forEach(button => {
 window.addEventListener('click', (event) => {
     if (event.target === popupModal) {
         popupModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable body scrolling
     }
     if (event.target === comparisonModal) {
         comparisonModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable body scrolling
     }
     if (event.target === formModal) {
         formModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable body scrolling
     }
 });
 
@@ -92,6 +96,7 @@ function showPopup(droneType) {
         .join('');
     
     popupModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent body from scrolling
 }
 
 // Show comparison modal
@@ -209,3 +214,86 @@ window.addEventListener("click", (e) => {
         document.body.style.overflow = "auto";
     }
 });
+
+
+
+
+
+
+//DRONE PRICE CALCULATION
+
+// Price data for different drone types with pre-calculated base prices
+const dronePrices = {
+    '3-inch': {
+        basePrice: { usd: 505.17, inr: 43600 }, // Pre-calculated base price
+        accessories: {
+            'battery': { usd: 35, inr: 3000 },
+            'battery-charger': { usd: 23, inr: 2000 },
+            'gps': { usd: 17.57, inr: 1500 },
+            'digital-fpv': { usd: 81, inr: 7000 },
+            'antenna': { usd: 9.37, inr: 800 }
+        }
+    },
+    '5-inch': {
+        basePrice: { usd: 505.17, inr: 43600 }, // Same as 3-inch
+        accessories: {
+            'battery': { usd: 35, inr: 3000 },
+            'battery-charger': { usd: 23, inr: 2000 },
+            'gps': { usd: 17.57, inr: 1500 },
+            'digital-fpv': { usd: 81, inr: 7000 },
+            'antenna': { usd: 9.37, inr: 800 }
+        }
+    },
+    '7-inch': {
+        basePrice: { usd: 505.17, inr: 43600 }, // Same as 3-inch
+        accessories: {
+            'battery': { usd: 35, inr: 3000 },
+            'battery-charger': { usd: 23, inr: 2000 },
+            'gps': { usd: 17.57, inr: 1500 },
+            'digital-fpv': { usd: 81, inr: 7000 },
+            'antenna': { usd: 9.37, inr: 800 }
+        }
+    }
+};
+
+// Calculate base price for a drone type
+function calculateBasePrice(droneType) {
+    return dronePrices[droneType]?.basePrice || { usd: 0, inr: 0 };
+}
+
+function updatePriceCalculation() {
+    const droneSelect = document.getElementById('drone-type');
+    const selectedDrone = droneSelect.value;
+
+    if (!selectedDrone || !dronePrices[selectedDrone]) {
+        return;
+    }
+
+    // Fetch pre-calculated base price
+    const base_Price = calculateBasePrice(selectedDrone);
+
+    // Calculate accessories total
+    let accessoriesTotal = { usd: 0, inr: 0 };
+    const accessoryCheckboxes = document.querySelectorAll(`#${selectedDrone}-options input[type="checkbox"]:checked`);
+
+    accessoryCheckboxes.forEach(checkbox => {
+        const accessoryType = checkbox.value;
+        const accessory = dronePrices[selectedDrone].accessories[accessoryType];
+        if (accessory) {
+            accessoriesTotal.usd += accessory.usd;
+            accessoriesTotal.inr += accessory.inr;
+        }
+    });
+
+    // Calculate total
+    const total = {
+        usd: basePrice.usd + accessoriesTotal.usd,
+        inr: basePrice.inr + accessoriesTotal.inr
+    };
+
+    // Update display
+    document.getElementById('price-details').textContent = `$${base_Price.usd.toFixed(2)} / ₹${base_Price.inr.toLocaleString()}`;
+    document.getElementById('base-price').textContent = `$${base_Price.usd.toFixed(2)} / ₹${base_Price.inr.toLocaleString()}`;
+    document.getElementById('accessories-price').textContent = `$${accessoriesTotal.usd.toFixed(2)} / ₹${accessoriesTotal.inr.toLocaleString()}`;
+    document.getElementById('total-price').textContent = `$${total.usd.toFixed(2)} / ₹${total.inr.toLocaleString()}`;
+}
